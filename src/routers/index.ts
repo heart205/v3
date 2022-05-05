@@ -1,13 +1,19 @@
 import * as VueRouter from 'vue-router'
-import { defineAsyncComponent } from 'vue'
-export const routes = [
-  {
-    path: '/:pathMatch(.*)',
-    name: '404',
-    component: defineAsyncComponent(() => import('../pages/404/index.vue'))
-  }
-]
+import { useRoute } from './hooks/useRoute'
+import config from '../store/modules/config'
+import { layoutRoutes } from './layoutRoutes'
+import type { RouterConfig } from '../types/layout'
+let routes: RouterConfig[] = []
 
+const index = layoutRoutes.findIndex(
+  (val: RouterConfig) => val.name === 'Layout'
+)
+if (index > -1) {
+  const route = layoutRoutes[index]
+  routes = useRoute(route, config.state)
+}
+
+console.log(routes)
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
   routes

@@ -11,7 +11,7 @@ function goBack() {
     <div>
       <div>
         <span class="goBack" @click="goBack">go back</span>
-        <span>pages not found</span>
+        <span>page not found</span>
       </div>
       <img src="../../assets/images/404.png" />
     </div>
@@ -23,12 +23,12 @@ function goBack() {
   width: 100%;
   height: 100%;
   display: flex;
+  font-size: 18px;
 }
 .not-found > div {
   margin: auto;
   display: flex;
   text-align: center;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 10px;
 }
