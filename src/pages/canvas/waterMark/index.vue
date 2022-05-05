@@ -53,7 +53,6 @@ function init() {
   }
 }
 
-
 const changeCanvas: changeCanvasType = (e: InputEvent, field: string) => {
   changeCanvas.timer && clearTimeout(changeCanvas.timer)
   if (
@@ -87,12 +86,10 @@ const changeCanvas: changeCanvasType = (e: InputEvent, field: string) => {
   }, 500)
 }
 
-
 onMounted(() => {
   init()
   window.addEventListener('resize', init, false)
 })
-
 </script>
 
 <template>
