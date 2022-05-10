@@ -9,7 +9,3 @@
   "vetur.validation.script": false
 }
 ```
-
-## HTML CSS Support extension
-
-安装为了支持 tailwindcss
