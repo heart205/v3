@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, shallowRef } from 'vue'
 import type SideLogo from './logo.vue'
+import Logo from './logo.vue'
 import SideBar from './sideBar.vue'
 // 动态计算高度
 const logoRef = shallowRef<typeof SideLogo>()
@@ -22,7 +23,7 @@ const sideBarHeight = computed(() => {
 
 <template>
   <div class="w-48">
-    <SideLogo ref="logoRef" />
+    <Logo ref="logoRef" />
     <div :style="{ height: sideBarHeight }">
       <SideBar />
     </div>
