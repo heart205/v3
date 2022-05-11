@@ -4,20 +4,36 @@
  * @description
  * @Date 2022-05-01
  */
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, defineProps } from 'vue'
 import type { changeCanvasType } from '../../../types/waterMark'
 
 const canvas = ref<HTMLCanvasElement | null>(null)
+const divTopElement = ref<HTMLDivElement | null>(null)
 const text = ref(`heart\nthis is waterMark`)
 const width = ref(200) //水印盒子的宽度
 const height = ref(130) // 水印盒子的高度
 const fontSize = ref(20)
-
+const props = defineProps({
+  isGlobalShowWaterMark: {
+    type: Boolean,
+    default: false
+  }
+})
 function init() {
   const c = canvas.value
   if (!c) return
-  c.width = window.innerWidth
-  c.height = window.innerHeight
+
+  if (props.isGlobalShowWaterMark) {
+    c.width = window.innerWidth
+    c.height = window.innerHeight
+  } else {
+    const div = divTopElement.value
+    if (div) {
+      const rect = div.getBoundingClientRect()
+      c.width = rect.width
+      c.height = rect.height
+    }
+  }
   // 将屏幕切割
   if (c) {
     const ctx = c.getContext('2d')
@@ -94,10 +110,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <teleport to="body">
-    <canvas ref="canvas" class="canvas"></canvas>
-  </teleport>
-  <div class="water-marker">
+  <div ref="divTopElement" class="water-marker">
+    <template v-if="props.isGlobalShowWaterMark">
+      <teleport to="body">
+        <canvas ref="canvas" class="canvas"></canvas>
+      </teleport>
+    </template>
+    <template v-else>
+      <canvas ref="canvas" class="canvas"></canvas>
+    </template>
     <h1>盒子范围：50 - 1000</h1>
     <textarea
       type="text"
@@ -143,5 +164,6 @@ onMounted(() => {
   height: 100%;
   background-color: #eee;
   text-align: center;
+  position: relative;
 }
 </style>

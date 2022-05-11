@@ -4,12 +4,22 @@ import { reactive } from 'vue'
 import { useMenuItem } from './hooks/useItem'
 import type { ItemConfig } from '../../types/sideBar'
 import MenuItemDeep from './menuItem.vue'
-const data = reactive<{ selectedKeys: string[]; sideItem: ItemConfig[] }>({
-  selectedKeys: [],
-  sideItem: []
-})
-
+import { useStore } from 'vuex'
+import type { storeImpl } from '../../types/store'
+import type { systemConfig } from '../../types/store'
 const item = useMenuItem()
+
+const store = useStore<storeImpl>()
+
+const data = reactive<{
+  selectedKeys: string[]
+  sideItem: ItemConfig[]
+  config: systemConfig
+}>({
+  selectedKeys: [],
+  sideItem: [],
+  config: store.state.config
+})
 </script>
 
 <template>
@@ -17,6 +27,8 @@ const item = useMenuItem()
     v-model:selectedKeys="data.selectedKeys"
     mode="inline"
     :inlineIndent="0"
+    :theme="data.config.sideBarTheme"
+    :inline-collapsed="data.config.toggle"
   >
     <menu-item-deep type="subMenu" v-for="i in item" :key="i.key" :list="i" />
   </Menu>

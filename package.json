@@ -11,6 +11,7 @@
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.5.0",

@@ -10,10 +10,9 @@ import { SubMenu, MenuItem } from 'ant-design-vue'
 import { useStore } from 'vuex'
 import type { storeImpl } from '../../../types/store'
 import type { Router } from 'vue-router'
-
 export function useMenuItem(item: ItemConfig, deepNumber = 1, router: Router) {
   const store = useStore<storeImpl>()
-  if (store.state.config.deepArrayToSideBar < deepNumber) return
+  if (store.state.config.sideBarDeepNumber < deepNumber) return
   return h(
     MenuItem,
     {
@@ -45,7 +44,7 @@ export function useMenuItem(item: ItemConfig, deepNumber = 1, router: Router) {
 
 export function useSubItem(item: ItemConfig, deepNumber = 1, router: Router) {
   const store = useStore<storeImpl>()
-  if (store.state.config.deepArrayToSideBar < deepNumber) return
+  if (store.state.config.sideBarDeepNumber < deepNumber) return
   return h(
     SubMenu,
     {
