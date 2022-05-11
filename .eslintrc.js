@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     'prefer-rest-params': 0, // 关闭使用 rest 参数
-    '@typescript-eslint/consistent-type-imports': 'error', // 当只引用类型时，自动加上 type 操作符
+    '@typescript-eslint/consistent-type-imports': ['error'], // 当只引用类型时，自动加上 type 操作符
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 0, // setup is error
     '@typescript-eslint/no-explicit-any': 0,
