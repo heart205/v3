@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, shallowRef } from 'vue'
+// commit-lint bug
 import type SideLogo from './logo.vue'
 import Logo from './logo.vue'
 import SideBar from './sideBar.vue'
