@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, shallowRef } from 'vue'
-import type Logo from './logo.vue'
+import Logo from './logo.vue'
 import SideBar from './sideBar.vue'
 // 动态计算高度
 const logoRef = shallowRef<typeof Logo>()
