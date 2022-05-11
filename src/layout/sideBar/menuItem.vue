@@ -23,7 +23,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<template>
-  <slot></slot>
-</template>

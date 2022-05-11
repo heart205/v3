@@ -14,5 +14,3 @@ const Layout = defineAsyncComponent(() => import('./layout.vue'))
     </template>
   </Suspense>
 </template>
-
-<style></style>

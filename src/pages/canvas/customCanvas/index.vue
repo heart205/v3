@@ -5,7 +5,7 @@ import { ref, onMounted, reactive } from 'vue'
  * @description
  * @Date 2022-05-01
  */
-type options = {
+type optionsType = {
   lineWidth: number
   ctx: CanvasRenderingContext2D | null
   width: number
@@ -13,7 +13,7 @@ type options = {
   isWindowListener: boolean
 }
 const canvas = ref<HTMLCanvasElement | null>(null)
-const options = reactive<options>({
+const options = reactive<optionsType>({
   lineWidth: 5,
   ctx: null,
   width: 300,
@@ -31,7 +31,7 @@ function mouseMove(event: MouseEvent) {
 }
 function addEventListener(
   canvas: HTMLCanvasElement,
-  options: options,
+  options: optionsType,
   event: MouseEvent
 ) {
   const { offsetX, offsetY } = event
@@ -45,7 +45,7 @@ function addEventListener(
     }
   }
 }
-function removeEventListener(canvas: HTMLCanvasElement, options: options) {
+function removeEventListener(canvas: HTMLCanvasElement, options: optionsType) {
   if (options.ctx) {
     options.ctx.closePath()
   }
@@ -130,8 +130,9 @@ onMounted(() => {
 
 <template>
   <div class="bgc">
-    <canvas ref="canvas" @mousedown="mouseDown" @mouseup="mouseUp"></canvas>
-
+    <div>
+      <canvas ref="canvas" @mousedown="mouseDown" @mouseup="mouseUp"></canvas>
+    </div>
     <div class="canvas-btn">
       <button @click="handleClearCanvas">Clear</button>
       <button @click="handleSubmitCanvas">Save</button>
@@ -139,7 +140,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
 canvas {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
 }
@@ -161,6 +162,12 @@ button:hover {
   margin: 10px;
 }
 .bgc {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
   text-align: center;
+  canvas {
+    display: inline-block;
+  }
 }
 </style>

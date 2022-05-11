@@ -29,6 +29,7 @@ const data = reactive<{
     :inlineIndent="0"
     :theme="data.config.sideBarTheme"
     :inline-collapsed="data.config.toggle"
+    :style="{ borderRight: 'none' }"
   >
     <menu-item-deep type="subMenu" v-for="i in item" :key="i.key" :list="i" />
   </Menu>
