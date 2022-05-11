@@ -5,7 +5,6 @@ import SideBar from './sideBar.vue'
 // 动态计算高度
 const logoRef = shallowRef<typeof Logo>()
 const height = ref(0)
-console.log(height.value)
 onMounted(() => {
   if (logoRef && logoRef.value) {
     const current = logoRef.value.$el
