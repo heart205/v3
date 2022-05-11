@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Menu } from 'ant-design-vue'
 import { reactive } from 'vue'
-import { useMenuItem } from './hooks/useItem'
+import { useMenuItem } from './hooks/useItemList'
 import type { ItemConfig } from '../../types/sideBar'
 import MenuItemDeep from './menuItem.vue'
 import { useStore } from 'vuex'
