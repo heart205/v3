@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import config from './modules/config'
-const store = createStore({
+import type { storeImpl } from '../types/store'
+const store = createStore<storeImpl>({
   modules: {
     config
   }

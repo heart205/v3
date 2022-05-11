@@ -6,6 +6,7 @@ interface meta {
   icon?: string
   tab?: string
   nav?: boolean
+  sideBarType?: 'subMenu' | 'menuItem'
   [key: string | symbol | number]: unknown
 }
 export interface RouterConfig {

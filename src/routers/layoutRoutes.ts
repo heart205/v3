@@ -3,7 +3,7 @@
  * @description 布局路由
  * @Date 2022-05-05
  */
-import type { RouterConfig } from '../types/layout'
+import type { RouterConfig } from '../types/router'
 export const layoutRoutes: RouterConfig[] = [
   {
     path: '/',

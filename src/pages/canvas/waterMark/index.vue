@@ -5,7 +5,7 @@
  * @Date 2022-05-01
  */
 import { ref, onMounted } from 'vue'
-import type { changeCanvasType } from './index'
+import type { changeCanvasType } from '../../../types/waterMark'
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 const text = ref(`heart\nthis is waterMark`)
@@ -53,8 +53,9 @@ function init() {
   }
 }
 
-const changeCanvas: changeCanvasType = (e: InputEvent, field: string) => {
-  changeCanvas.timer && clearTimeout(changeCanvas.timer)
+const changeCanvas: changeCanvasType = (e: Event, field: string) => {
+  if (!(e instanceof InputEvent)) return
+  typeof changeCanvas.timer === 'number' && clearTimeout(changeCanvas.timer)
   if (
     e.target instanceof HTMLInputElement ||
     e.target instanceof HTMLTextAreaElement

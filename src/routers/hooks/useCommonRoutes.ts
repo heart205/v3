@@ -3,7 +3,7 @@
  * @description 公共路由配置
  * @Date 2022-05-06
  */
-import type { RouterConfig } from '../../types/layout'
+import type { RouterConfig } from '../../types/router'
 import { commonRoutes } from '../commonRoutes'
 import type { systemConfig } from '../../types/store'
 export function useCommonRoutes(routers: RouterConfig, config: systemConfig) {
