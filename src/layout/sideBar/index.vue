@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, shallowRef } from 'vue'
 // commit-lint bug
-import type SideLogo from './logo.vue'
-import Logo from './logo.vue'
+import type LogoPages from './logo.vue'
 import SideBar from './sideBar.vue'
 // 动态计算高度
-const logoRef = shallowRef<typeof SideLogo>()
+const logoRef = shallowRef<typeof LogoPages>()
 const height = ref(0)
 onMounted(() => {
   if (logoRef && logoRef.value) {
@@ -24,7 +23,7 @@ const sideBarHeight = computed(() => {
 
 <template>
   <div class="w-48">
-    <Logo ref="logoRef" />
+    <logo-pages ref="logoRef" />
     <div :style="{ height: sideBarHeight }">
       <SideBar />
     </div>
