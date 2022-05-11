@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, shallowRef } from 'vue'
 import Logo from './logo.vue'
+import type { LogoType } from '../../types/sidebar'
 import SideBar from './sideBar.vue'
 // 动态计算高度
-const logoRef = shallowRef()
+const logoRef = shallowRef<LogoType>()
 const height = ref(0)
 onMounted(() => {
   if (logoRef && logoRef.value) {

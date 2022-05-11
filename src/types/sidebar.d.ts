@@ -1,3 +1,5 @@
+import type Logo from '../layout/sideBar/logo.vue'
+
 export interface ItemConfig {
   path: string
   name: string
@@ -5,3 +7,5 @@ export interface ItemConfig {
   type: 'subMenu' | 'menuItem'
   children?: ItemConfig[]
 }
+
+export type LogoType = Logo
