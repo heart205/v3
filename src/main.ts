@@ -8,7 +8,9 @@ import 'ant-design-vue/dist/antd.less'
 import './assets/theme/theme.css'
 import store from './store'
 import './prod.ts'
+import i18n from './i18n/index'
 const app = createApp(App)
 app.use(router)
 app.use(store)
+app.use(i18n)
 app.mount('#app')
