@@ -5,9 +5,10 @@ import { layoutRoutes } from './layoutRoutes'
 import type { RouterConfig } from '../types/router'
 import { canvasRoutes } from './canvasRoutes'
 import dashBoardRoutes from './dashBoardRoutes'
+import MarkdownRoutes from './markdownRoutes'
 let routesArray: RouterConfig[] = []
 
-routesArray = routesArray.concat(dashBoardRoutes, canvasRoutes)
+routesArray = routesArray.concat(dashBoardRoutes, canvasRoutes, MarkdownRoutes)
 
 let routes: RouterConfig[] = []
 const index = layoutRoutes.findIndex(
