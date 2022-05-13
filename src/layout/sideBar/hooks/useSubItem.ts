@@ -10,6 +10,7 @@ import { SubMenu, MenuItem } from 'ant-design-vue'
 import { useStore } from 'vuex'
 import type { storeImpl } from '../../../types/store'
 import type { Router } from 'vue-router'
+import { useIcon } from './useIcon'
 export function useMenuItem(item: ItemConfig, deepNumber = 1, router: Router) {
   const store = useStore<storeImpl>()
   if (store.state.config.sideBarDeepNumber < deepNumber) return
@@ -24,6 +25,9 @@ export function useMenuItem(item: ItemConfig, deepNumber = 1, router: Router) {
       }
     },
     {
+      icon: () => {
+        return useIcon(item.icon)
+      },
       default: () => [
         item.name,
         ...((item.children &&
@@ -48,8 +52,7 @@ export function useSubItem(item: ItemConfig, deepNumber = 1, router: Router) {
   return h(
     SubMenu,
     {
-      key: item.key,
-      title: item.name
+      key: item.key
     },
     {
       default: () =>
@@ -60,7 +63,13 @@ export function useSubItem(item: ItemConfig, deepNumber = 1, router: Router) {
             return useSubItem(val, deepNumber + 1, router)
           }
           return useMenuItem(val, deepNumber + 1, router)
-        })
+        }),
+      title: () => {
+        return item.name
+      },
+      icon: () => {
+        return useIcon(item.icon)
+      }
     }
   )
 }

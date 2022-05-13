@@ -15,7 +15,8 @@ export const canvasRoutes: RouterConfig[] = [
     meta: {
       hidden: false,
       title: 'canvas案例',
-      sideBarType: 'subMenu'
+      sideBarType: 'subMenu',
+      icon: 'folder'
     },
     children: [
       {

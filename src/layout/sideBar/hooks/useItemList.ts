@@ -17,7 +17,8 @@ function createItemConfig(
       key: path,
       name: config.meta.title || config.name,
       path,
-      type: config.meta.sideBarType || 'menuItem'
+      type: config.meta.sideBarType || 'menuItem',
+      icon: config.meta.icon || 'index'
     }
   }
 }

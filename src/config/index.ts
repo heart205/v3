@@ -4,4 +4,6 @@ const footer = '© 2021 - © present'
 
 const title = 'v3  vue'
 
-export { footer, logoPath, title }
+const projectConfig = '项目配置'
+
+export { footer, logoPath, title, projectConfig }

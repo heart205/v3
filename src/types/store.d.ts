@@ -8,6 +8,7 @@ export interface systemConfig {
   sideBarDeepNumber: number
   sideBarTheme: sideBarTheme
   toggle: boolean
+  isSystemCollapsed: boolean
 }
 export interface storeImpl {
   // export function useStore<S = any>(injectKey?: InjectionKey<Store<S>> | string): Store<S>;

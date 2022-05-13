@@ -26,7 +26,7 @@ const data = reactive<{
   <Menu
     v-model:selectedKeys="data.selectedKeys"
     mode="inline"
-    :inlineIndent="0"
+    :inlineIndent="24"
     :theme="data.config.sideBarTheme"
     :inline-collapsed="data.config.toggle"
     :style="{ borderRight: 'none' }"
