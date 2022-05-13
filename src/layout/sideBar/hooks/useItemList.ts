@@ -8,7 +8,11 @@ function createItemConfig(
 ): ItemConfig | undefined {
   if (config.meta && !config.meta.hidden) {
     const path =
-      parentPath === '' ? config.path : `${parentPath}/${config.path}`
+      parentPath === ''
+        ? config.path
+        : parentPath === '/'
+        ? `${parentPath}${config.path}`
+        : `${parentPath}/${config.path}`
     return {
       key: path,
       name: config.meta.title || config.name,

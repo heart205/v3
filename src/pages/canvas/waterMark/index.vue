@@ -39,7 +39,7 @@ function init() {
     const ctx = c.getContext('2d')
     if (!ctx) return
     ctx.font = fontSize.value + 'px' + ' Arial'
-    ctx.fillStyle = 'rgba(51,51,51,.1)'
+    ctx.fillStyle = `rgba(160, 156, 156, 0.1)`
     ctx.textAlign = 'center'
     for (
       let i = 0;

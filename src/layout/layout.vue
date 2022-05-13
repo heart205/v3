@@ -8,7 +8,7 @@ import Footer from './footer/index.vue'
     <SideBar />
     <div class="flex flex-col flex-1">
       <Title />
-      <div class="flex-1">
+      <div class="flex-1 content">
         <router-view />
       </div>
       <Footer />
@@ -16,4 +16,8 @@ import Footer from './footer/index.vue'
   </div>
 </template>
 
-<style lang="less"></style>
+<style lang="less" scoped>
+.content {
+  background-color: var(--bg-color);
+}
+</style>

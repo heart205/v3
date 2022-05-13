@@ -6,11 +6,13 @@
 import { useCommonRoutes } from '../hooks/useCommonRoutes'
 import type { systemConfig } from '../../types/store'
 import type { RouterConfig } from '../../types/router'
-import { canvasRoutes } from '../canvasRoutes'
 import { useRoutes } from './useRoutes'
 
-const routesArray = [...canvasRoutes]
-export function useRoute(route: RouterConfig, config: systemConfig) {
+export function useRoute(
+  route: RouterConfig,
+  config: systemConfig,
+  routesArray: RouterConfig[]
+) {
   let routes: RouterConfig[] = []
   route = useRoutes(route, routesArray)
 

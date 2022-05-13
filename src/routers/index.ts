@@ -3,6 +3,11 @@ import { useRoute } from './hooks/useRoute'
 import config from '../store/modules/config'
 import { layoutRoutes } from './layoutRoutes'
 import type { RouterConfig } from '../types/router'
+import { canvasRoutes } from './canvasRoutes'
+import dashBoardRoutes from './dashBoardRoutes'
+let routesArray: RouterConfig[] = []
+
+routesArray = routesArray.concat(dashBoardRoutes, canvasRoutes)
 
 let routes: RouterConfig[] = []
 const index = layoutRoutes.findIndex(
@@ -10,7 +15,7 @@ const index = layoutRoutes.findIndex(
 )
 if (index > -1) {
   const route = layoutRoutes[index]
-  routes = useRoute(route, config.state)
+  routes = useRoute(route, config.state, routesArray)
 }
 
 const router = VueRouter.createRouter({
