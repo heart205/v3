@@ -20,6 +20,7 @@ const props = defineProps({
 <style lang="less" scoped>
 @bg-color: #fff;
 @color: rgb(86 82 82 / 85%);
+@border-color: #f0f0f0;
 .h-card {
   min-height: 48px;
   background-color: @bg-color;
@@ -33,5 +34,6 @@ const props = defineProps({
   display: flex;
   align-items: center;
   color: @color;
+  border-bottom: 1px solid @border-color;
 }
 </style>
