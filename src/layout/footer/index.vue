@@ -3,7 +3,7 @@ import { footer } from '../../config/index'
 </script>
 
 <template>
-  <div class="h-16 text-center footer-line-height footer-shadow">
+  <div class="h-16 text-center footer-line-height footer-shadow flex-shrink-0">
     <span>
       {{ footer }}
     </span>

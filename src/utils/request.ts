@@ -34,6 +34,14 @@ request.interceptors.response.use(
   },
   (error) => {
     console.log('response error :', error)
+    if (error.code === 'ECONNABORTED') {
+      msgNotification(messageType.ERROR, '请求超时')
+      return Promise.reject(error.message)
+    } else if (error.code === 'ERR_BAD_REQUEST') {
+      // 接口404
+      msgNotification(messageType.ERROR, error.message)
+      return Promise.reject(error.message)
+    }
   }
 )
 export default request

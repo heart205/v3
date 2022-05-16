@@ -18,7 +18,7 @@ function handleChangeIsSystemCollapsedVisible(bool: boolean) {
 }
 </script>
 <template>
-  <div class="h-16 title-shadow">
+  <div class="h-16 title-shadow flex-shrink-0">
     <div class="h-icon" @click="handleChangeToggle">
       <menu-unfold-outlined v-if="store.state.config.toggle" />
       <menu-fold-outlined v-else />

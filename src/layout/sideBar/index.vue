@@ -41,7 +41,7 @@ const sideBarHeight = computed(() => {
 </script>
 
 <template>
-  <div class="w-48 width-transition" :style="style.config">
+  <div class="w-48 width-transition flex-shrink-0" :style="style.config">
     <Logo ref="logoRef" />
     <div :style="{ height: sideBarHeight }" class="border-right-lg">
       <SideBar />
