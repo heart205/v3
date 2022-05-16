@@ -15,3 +15,7 @@ export function useFactoryStore<T extends keyof storeImpl>(
 export function useStoreConfig() {
   return useFactoryStore('config')
 }
+
+export function useStoreUser() {
+  return useFactoryStore('user')
+}

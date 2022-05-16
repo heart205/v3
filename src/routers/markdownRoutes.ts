@@ -3,15 +3,24 @@ export default <RouterConfig[]>[
   {
     path: '/markdown',
     name: 'Markdown',
-    redirect: '/markdown/index',
-    component: () => import('../pages/markdown/index.vue'),
+    redirect: '/markdown/list',
+    component: () => import('../pages/markdown/layout.vue'),
     meta: {
       title: 'markdown',
       icon: 'markdown'
     },
     children: [
       {
-        path: 'index',
+        path: 'list',
+        name: 'MarkdownList',
+        component: () => import('../pages/markdown/list.vue'),
+        meta: {
+          title: '文章列表',
+          icon: 'markdown'
+        }
+      },
+      {
+        path: 'editor',
         name: 'MarkdownIndex',
         component: () => import('../pages/markdown/index.vue'),
         meta: {
