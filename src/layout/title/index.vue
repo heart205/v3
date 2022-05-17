@@ -18,7 +18,7 @@ function handleChangeIsSystemCollapsedVisible(bool: boolean) {
 }
 </script>
 <template>
-  <div class="h-16 title-shadow flex-shrink-0">
+  <div class="h-12 title-shadow flex-shrink-0">
     <div class="h-icon" @click="handleChangeToggle">
       <menu-unfold-outlined v-if="store.state.config.toggle" />
       <menu-fold-outlined v-else />
@@ -42,7 +42,7 @@ function handleChangeIsSystemCollapsedVisible(bool: boolean) {
   justify-content: space-between;
 }
 .h-icon {
-  padding: 20px 12px;
+  padding: 12px 12px;
   cursor: pointer;
   transition: all 0.45s cubic-bezier(0.215, 0.61, 0.355, 1);
   span {

@@ -4,7 +4,10 @@ const state: systemConfig = {
   sideBarDeepNumber: 3, //侧边栏深度
   sideBarTheme: 'light',
   toggle: false,
-  isSystemCollapsed: false
+  isSystemCollapsed: false,
+  footerHeight: 0, // 页脚的高度
+  tabsList: [],
+  isShowTabsList: true
 }
 
 const mutations = {

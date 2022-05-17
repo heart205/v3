@@ -3,12 +3,20 @@ import type store from '../store/index'
 import type { Store } from 'vuex'
 import type { User } from './store/user'
 type sideBarTheme = 'light' | 'dark'
+
+export interface Tabs {
+  name: string
+  path: string | number
+}
 export interface systemConfig {
   pageNotFoundIsContainContent: boolean
   sideBarDeepNumber: number
   sideBarTheme: sideBarTheme
   toggle: boolean
   isSystemCollapsed: boolean
+  footerHeight: number
+  tabsList: Tabs[]
+  isShowTabsList: boolean
 }
 export interface storeImpl {
   // export function useStore<S = any>(injectKey?: InjectionKey<Store<S>> | string): Store<S>;

@@ -1,11 +1,11 @@
-import { reactive } from 'vue'
+import { reactive, markRaw } from 'vue'
 import type { FilterList } from '../../../types/services/markdown'
 export function useFilterList() {
   const filterList = reactive<{
     filterList: FilterList[]
     activeKey: string
   }>({
-    filterList: [
+    filterList: markRaw([
       {
         title: '全部',
         field: 'all',
@@ -26,7 +26,7 @@ export function useFilterList() {
         field: 'unPass',
         num: 0
       }
-    ],
+    ]),
     activeKey: 'all'
   })
   return filterList

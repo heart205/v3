@@ -2,9 +2,9 @@ import type { RouterConfig } from '../types/router'
 
 export default <RouterConfig[]>[
   {
-    path: '/',
+    path: '/dashBoard',
     name: 'DashBoard',
-    redirect: '/dashBoard',
+    redirect: '/dashBoard/index',
     component: () => import('../pages/dashboard/index.vue'),
     meta: {
       title: 'dashBoard',
@@ -12,8 +12,8 @@ export default <RouterConfig[]>[
     },
     children: [
       {
-        path: 'dashBoard',
-        name: 'DashBoard',
+        path: 'index',
+        name: 'DashBoardIndex',
         component: () => import('../pages/dashboard/index.vue'),
         meta: {
           title: '控制台',

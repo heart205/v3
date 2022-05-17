@@ -8,6 +8,7 @@ export const layoutRoutes: RouterConfig[] = [
   {
     path: '/',
     name: 'Layout',
+    redirect: '/dashBoard',
     component: () => import('@/layout/index.vue')
   }
 ]

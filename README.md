@@ -13,3 +13,11 @@
 ## markdown
 
 推荐 https://imzbf.github.io/md-editor-v3/demo/index
+
+## http request library
+
+[axios](https://axios-http.com/zh/docs/intro)
+
+## date library
+
+[dayjs](https://dayjs.gitee.io/docs/zh-CN/installation/node-js)

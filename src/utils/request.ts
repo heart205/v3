@@ -37,8 +37,12 @@ request.interceptors.response.use(
     if (error.code === 'ECONNABORTED') {
       msgNotification(messageType.ERROR, '请求超时')
       return Promise.reject(error.message)
-    } else if (error.code === 'ERR_BAD_REQUEST') {
+    } else if (
       // 接口404
+      error.code === 'ERR_BAD_REQUEST' ||
+      // 网络请求失败
+      error.code === 'ERR_NETWORK'
+    ) {
       msgNotification(messageType.ERROR, error.message)
       return Promise.reject(error.message)
     }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
+import { useStoreConfig } from '../../store/hooks/useStoreConfig'
 import { Tabs, TabPane } from 'ant-design-vue'
 import { Input } from 'ant-design-vue'
 import Filter from './filter.vue'
@@ -14,12 +15,24 @@ const articleList = ref<HTMLDivElement>(null!)
 const articleStyle = reactive({
   height: '100%'
 })
+const state = useStoreConfig()
+function initHeight() {
+  if (articleList.value) {
+    const rect = articleList.value.getBoundingClientRect()
+    const height =
+      window.innerHeight - rect.top - rect.height - (state.footerHeight || 0)
+    articleStyle.height = height + 'px'
+  }
+}
 onMounted(() => {
-  const rect = articleList.value.getBoundingClientRect()
-  // TODO: 后续通过判断是否有页脚来计算高度
-  const height = window.innerHeight - rect.top - rect.height - 64
-  articleStyle.height = height + 'px'
+  initHeight()
 })
+watch(
+  () => state.footerHeight,
+  (newVal) => {
+    initHeight()
+  }
+)
 function onSearch(searchValue: string) {
   console.log(searchValue)
 }

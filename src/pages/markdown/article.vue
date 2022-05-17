@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { shallowReactive } from 'vue'
+import { markRaw, shallowReactive } from 'vue'
 import { useStoreUser } from '../../store/hooks/useStoreConfig'
 import type { ArticleList } from '../../types/services/markdown'
 import { getArticleListFunc } from './hooks/useArticleList'
@@ -16,7 +16,7 @@ const articleList = shallowReactive<{
   total: 0
 })
 getArticleListFunc(user.userId).then((res) => {
-  articleList.list = res
+  articleList.list = markRaw(res)
 })
 </script>
 
