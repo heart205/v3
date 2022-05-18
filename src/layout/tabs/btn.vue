@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
 import { defineProps } from 'vue'
-const props = defineProps({
-  path: {
-    type: [String, Number],
-    required: true
-  },
-  name: {
-    type: String,
-    required: true
-  }
-})
+interface Props {
+  path: string | number
+  name: string
+}
+const props = defineProps<Props>()
 const route = useRoute()
 const router = useRouter()
 
