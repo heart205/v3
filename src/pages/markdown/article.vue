@@ -22,7 +22,7 @@ getArticleListFunc(user.userId).then((res) => {
 
 <template>
   <div class="h-full overflow-auto">
-    <template v-for="item in articleList.list">
+    <template v-for="item in articleList.list" :key="item.id">
       <div class="article-warp bg-white">
         <h2>
           <router-link

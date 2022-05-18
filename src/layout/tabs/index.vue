@@ -21,7 +21,7 @@ watch(
 
 <template>
   <div class="flex items-center">
-    <template v-for="item in tabsList.list">
+    <template v-for="item in tabsList.list" :key="item.path">
       <TabsBtn :path="item.path" :name="item.name" />
     </template>
   </div>
