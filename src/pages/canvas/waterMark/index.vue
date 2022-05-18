@@ -6,19 +6,16 @@
  */
 import { ref, onMounted, defineProps } from 'vue'
 import type { changeCanvasType } from '../../../types/waterMark'
-
+interface Props {
+  isGlobalShowWaterMark: boolean
+}
 const canvas = ref<HTMLCanvasElement | null>(null)
 const divTopElement = ref<HTMLDivElement | null>(null)
 const text = ref(`heart\nthis is waterMark`)
 const width = ref(200) //水印盒子的宽度
 const height = ref(130) // 水印盒子的高度
 const fontSize = ref(20)
-const props = defineProps({
-  isGlobalShowWaterMark: {
-    type: Boolean,
-    default: false
-  }
-})
+const props = defineProps<Props>()
 function init() {
   const c = canvas.value
   if (!c) return

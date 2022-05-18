@@ -1,4 +1,30 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useGeolocation } from './hooks/useGeolocation'
+import { getTemperature } from '../../services/dashBoard'
+import { shallowReactive } from 'vue'
+import type { temperatureInterface } from '../../types/services/dashBoard'
+const baseInfo = shallowReactive<{
+  weather: temperatureInterface | Record<string, unknown>
+}>({
+  weather: {}
+})
+useGeolocation().then(({ coords }) => {
+  const { latitude, longitude } = coords
+  getTemperature({
+    lat: String(latitude),
+    lon: String(longitude)
+  })
+    .then((res) => {
+      const { data } = res
+      if (data.code == 200) {
+        baseInfo.weather = data.data || {}
+      }
+    })
+    .catch((e) => {
+      console.log(e.message)
+    })
+})
+</script>
 
 <template>
   <div class="page-header">
@@ -9,7 +35,14 @@
       </span>
       <div class="introduce ml-4">
         <h2>早安 {{ 'heart' }}</h2>
-        <p>今日晴，20℃ - 32℃！</p>
+        <p>
+          <template v-if="baseInfo.weather.weatherInfo">
+            今日 {{ baseInfo.weather.weatherInfo }}，
+          </template>
+          <template v-if="baseInfo.weather.currentTemperature">
+            <span>当前温度: {{ baseInfo.weather.currentTemperature }}</span>
+          </template>
+        </p>
       </div>
       <div class="matter">
         <div>

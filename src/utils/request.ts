@@ -3,7 +3,7 @@ import { msgNotification } from '../utils/notification'
 import { messageType } from '../constant/messageType'
 const request = axios.create({
   baseURL: 'http://localhost:3000/',
-  timeout: 5000
+  timeout: 15000
 })
 
 request.interceptors.request.use(

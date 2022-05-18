@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-const props = defineProps({
-  title: {
-    default: String,
-    required: true
-  }
-})
+interface Props {
+  title: string
+}
+const props = defineProps<Props>()
 </script>
 
 <template>

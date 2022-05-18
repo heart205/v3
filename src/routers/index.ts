@@ -6,9 +6,15 @@ import type { RouterConfig } from '../types/router'
 import { canvasRoutes } from './canvasRoutes'
 import dashBoardRoutes from './dashBoardRoutes'
 import MarkdownRoutes from './markdownRoutes'
+import { editorRoutes } from './editorRoutes'
 let routesArray: RouterConfig[] = []
 
-routesArray = routesArray.concat(dashBoardRoutes, canvasRoutes, MarkdownRoutes)
+routesArray = routesArray.concat(
+  dashBoardRoutes,
+  canvasRoutes,
+  MarkdownRoutes,
+  editorRoutes
+)
 
 let routes: RouterConfig[] = []
 const index = layoutRoutes.findIndex(

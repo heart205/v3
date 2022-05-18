@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import Card from '../../components/card.vue'
+import Card from '../../components/card/card.vue'
 const data = reactive([
   {
     title: '文章',
