@@ -9,11 +9,21 @@ import {
   handleEditArticleApi
 } from '../../../services/markdown'
 import type { BaseResponse } from '../../../types/baseResponse'
-import type { ArticleList } from '../../../types/services/markdown'
+import type {
+  articleDetail,
+  ArticleList
+} from '../../../types/services/markdown'
+import type { pageNationRequest } from '../../../types/utils/tableRequest'
 
-export function getArticleListFunc(userId: number): Promise<ArticleList[]> {
+export function getArticleListFunc(
+  userId: number,
+  pageNation: pageNationRequest
+): Promise<articleDetail> {
   return new Promise((resolve, reject) => {
-    getArticleList(userId).then((res) => {
+    getArticleList({
+      userId,
+      ...pageNation
+    }).then((res) => {
       const { data } = res
       if (data.code === 200 && data.data) {
         resolve(data.data)

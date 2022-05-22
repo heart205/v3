@@ -35,6 +35,11 @@ export interface ArticleList {
   collectNumber: number
 }
 
+export interface articleDetail {
+  data: ArticleList[]
+  total: number
+}
+
 type UpdateArticle = 'title' | 'content' | 'id' | 'userId'
 export type UpdateArticleData = {
   [K in UpdateArticle]: ArticleList[K]

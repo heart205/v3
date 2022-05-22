@@ -20,7 +20,10 @@ function initHeight() {
   if (articleList.value) {
     const rect = articleList.value.getBoundingClientRect()
     const height =
-      window.innerHeight - rect.top - rect.height - (state.footerHeight || 0)
+      window.innerHeight -
+      rect.top -
+      (state.contentPadding || 16) -
+      (state.footerHeight || 0)
     articleStyle.height = height + 'px'
   }
 }

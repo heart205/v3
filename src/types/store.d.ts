@@ -17,6 +17,7 @@ export interface systemConfig {
   footerHeight: number
   tabsList: Tabs[]
   isShowTabsList: boolean
+  contentPadding: number
 }
 export interface storeImpl {
   // export function useStore<S = any>(injectKey?: InjectionKey<Store<S>> | string): Store<S>;

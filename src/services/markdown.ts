@@ -1,11 +1,13 @@
 import request from '../utils/request'
 import type {
+  articleDetail,
   articleDetailsInfo,
   UpdateArticleData
 } from '../types/services/markdown'
 import type { BaseResponse } from '../types/baseResponse'
 import type { AxiosPromise } from 'axios'
 import type { ArticleList } from '../types/services/markdown'
+import type { pageNationMerge } from '../types/utils/tableRequest'
 export function addArticle(
   data: articleDetailsInfo
 ): AxiosPromise<BaseResponse> {
@@ -18,14 +20,12 @@ export function addArticle(
 
 // 获取文章列表信息
 export function getArticleList(
-  userId: number
-): AxiosPromise<BaseResponse<ArticleList[]>> {
+  data: pageNationMerge<{ userId: number }>
+): AxiosPromise<BaseResponse<articleDetail>> {
   return request({
     url: '/article/getArticleDetail',
     method: 'post',
-    data: {
-      userId
-    }
+    data
   })
 }
 

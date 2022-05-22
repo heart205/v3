@@ -7,7 +7,8 @@ const state: systemConfig = {
   isSystemCollapsed: false,
   footerHeight: 0, // 页脚的高度
   tabsList: [],
-  isShowTabsList: true
+  isShowTabsList: true,
+  contentPadding: 16
 }
 
 const mutations = {
