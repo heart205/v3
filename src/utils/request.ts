@@ -2,7 +2,8 @@ import axios from 'axios'
 import { msgNotification } from '../utils/notification'
 import { messageType } from '../constant/messageType'
 const request = axios.create({
-  baseURL: 'http://localhost:3000/',
+  // baseURL: 'http://localhost:3000/',
+  baseURL: 'http://192.168.0.105:3000/',
   timeout: 15000
 })
 

@@ -6,6 +6,6 @@ const title = 'v3  vue'
 
 const projectConfig = '项目配置'
 
-const isShowFooter = true
+const isShowFooter = false
 
 export { footer, logoPath, title, projectConfig, isShowFooter }

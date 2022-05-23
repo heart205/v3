@@ -12,6 +12,7 @@ const props = defineProps<Props>()
       <div>{{ props.title }}</div>
       <slot name="cardRight"></slot>
     </div>
+    <slot></slot>
   </div>
 </template>
 

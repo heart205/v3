@@ -2,6 +2,8 @@
 import Header from './header.vue'
 import Article from './article.vue'
 import Dash from './dash.vue'
+import Card from '../../components/card/card.vue'
+import TimeLine from './timeLine.vue'
 </script>
 
 <template>
@@ -12,10 +14,18 @@ import Dash from './dash.vue'
         <div>
           <Article />
         </div>
-        <div class="aside">
+        <div class="aside flex flex-col">
           <Dash />
           <div class="aside-img">
             <img src="../../assets/images/asider-img.png" alt="" />
+          </div>
+          <div class="record flex-1 bg-white">
+            <!-- 数据埋点展示 -->
+            <Card title="最新动态">
+              <div class="new-dynamics">
+                <TimeLine />
+              </div>
+            </Card>
           </div>
         </div>
       </div>
@@ -41,7 +51,7 @@ import Dash from './dash.vue'
   }
 }
 .aside {
-  margin: 0 12px;
+  margin: 0 0 0 12px;
   .aside-img {
     height: 240px;
     margin: 14px 0;
@@ -52,5 +62,8 @@ import Dash from './dash.vue'
       object-fit: cover;
     }
   }
+}
+.new-dynamics {
+  padding: 12px;
 }
 </style>

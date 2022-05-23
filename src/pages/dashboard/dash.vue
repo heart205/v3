@@ -32,19 +32,20 @@ const data = reactive([
 
 <template>
   <div>
-    <Card title="快捷导航" />
-    <div class="flex dash-ul">
-      <template v-for="index in 6" :key="index">
-        <div class="dash-li">
-          <span>
-            {{ data[index - 1].count }}
-          </span>
-          <span>
-            {{ data[index - 1].title }}
-          </span>
-        </div>
-      </template>
-    </div>
+    <Card title="快捷导航">
+      <div class="flex dash-ul">
+        <template v-for="index in 6" :key="index">
+          <div class="dash-li">
+            <span>
+              {{ data[index - 1].count }}
+            </span>
+            <span>
+              {{ data[index - 1].title }}
+            </span>
+          </div>
+        </template>
+      </div>
+    </Card>
   </div>
 </template>
 
