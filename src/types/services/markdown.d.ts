@@ -6,7 +6,7 @@ export interface articleDetailsInfo {
 
 export interface FilterList {
   title: string
-  field: string
+  field: keyof statusLength
   num: number
 }
 
@@ -44,3 +44,13 @@ type UpdateArticle = 'title' | 'content' | 'id' | 'userId'
 export type UpdateArticleData = {
   [K in UpdateArticle]: ArticleList[K]
 }
+
+export interface statusLength {
+  underReview: number
+  examinationPassed: number
+  auditNotPassed: number
+  total: number
+}
+
+// 对象变为元祖
+// type ObjectToTuples<T extends Record<string, unknown>> = keyof T extends string ?

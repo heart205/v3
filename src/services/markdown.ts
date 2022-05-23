@@ -2,6 +2,7 @@ import request from '../utils/request'
 import type {
   articleDetail,
   articleDetailsInfo,
+  statusLength,
   UpdateArticleData
 } from '../types/services/markdown'
 import type { BaseResponse } from '../types/baseResponse'
@@ -46,5 +47,18 @@ export function getEditArticleInfo(data: {
     url: '/article/getArticleDetailsInfo',
     method: 'post',
     data
+  })
+}
+
+// 获取文章列表数量信息
+export function getStatusNumberService(
+  id: number
+): AxiosPromise<BaseResponse<statusLength>> {
+  return request({
+    url: '/article/getAllStatusNumbers',
+    method: 'post',
+    data: {
+      id
+    }
   })
 }

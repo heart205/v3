@@ -1,8 +1,31 @@
 <script setup lang="ts">
 import { useFilterList } from './hooks/useFilterList'
-import type { FilterList } from '../../types/services/markdown'
+import type { FilterList, statusLength } from '../../types/services/markdown'
+import { getStatusNumberService } from '../../services/markdown'
+
 const data = useFilterList()
 
+async function getStatusNumber(id: number): Promise<statusLength> {
+  try {
+    const { data } = await getStatusNumberService(id)
+    if (data.code == 200 && data.data) {
+      return data.data
+    }
+    throw new Error(data.message)
+  } catch (e: any) {
+    return e.message
+  }
+}
+getStatusNumber(1)
+  .then((res) => {
+    data.filterList = data.filterList.map((val) => {
+      val.num = res[val.field]
+      return { ...val }
+    })
+  })
+  .catch((e) => {
+    console.log(e)
+  })
 function handleClick(item: FilterList, index: number) {
   data.activeKey = item.field
 }

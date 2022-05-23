@@ -51,10 +51,10 @@ function handleEditArticleFunc() {
 }
 
 function isAddOrEdit() {
-  if (params.type === 'add') {
-    return handleAddArticle()
+  if (params.type === 'edit') {
+    return handleEditArticleFunc()
   }
-  return handleEditArticleFunc()
+  return handleAddArticle()
 }
 
 if (params.type === 'edit') {
