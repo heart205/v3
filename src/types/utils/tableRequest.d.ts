@@ -8,3 +8,8 @@ export type pageNationMerge<T extends Record<string, unknown>> = {
     ? pageNationRequest[k]
     : T[k]
 }
+
+export type dateMergeTotal<T, U extends number = number> = {
+  list: T
+  total: U
+}

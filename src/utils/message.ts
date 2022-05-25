@@ -8,3 +8,7 @@ export default <T>(type: messageType, msg: string) => {
 export const msgSuccess = (msg: string) => {
   message.success(msg)
 }
+
+export const msgError = (msg: string) => {
+  message.error(msg)
+}

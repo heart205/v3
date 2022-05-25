@@ -7,13 +7,15 @@ import { canvasRoutes } from './canvasRoutes'
 import dashBoardRoutes from './dashBoardRoutes'
 import MarkdownRoutes from './markdownRoutes'
 import { editorRoutes } from './editorRoutes'
+import systemRoutes from './systemRoutes'
 let routesArray: RouterConfig[] = []
 
 routesArray = routesArray.concat(
   dashBoardRoutes,
   canvasRoutes,
   MarkdownRoutes,
-  editorRoutes
+  editorRoutes,
+  systemRoutes
 )
 
 let routes: RouterConfig[] = []

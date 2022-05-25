@@ -3,7 +3,8 @@ import {
   AppstoreOutlined,
   FolderOutlined,
   ExperimentOutlined,
-  FileMarkdownOutlined
+  FileMarkdownOutlined,
+  SettingOutlined
 } from '@ant-design/icons-vue'
 import { h } from 'vue'
 export function useIcon(str: string | undefined) {
@@ -22,6 +23,9 @@ export function useIcon(str: string | undefined) {
     }
     case 'markdown': {
       return h(FileMarkdownOutlined)
+    }
+    case 'icon-setting': {
+      return h(SettingOutlined)
     }
     default: {
       return ''
