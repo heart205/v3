@@ -9,6 +9,9 @@ export const layoutRoutes: RouterConfig[] = [
     path: '/',
     name: 'Layout',
     redirect: '/dashBoard',
-    component: () => import('@/layout/index.vue')
+    component: () => import('@/layout/index.vue'),
+    meta: {
+      title: '首页'
+    }
   }
 ]

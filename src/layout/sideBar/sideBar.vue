@@ -47,14 +47,14 @@ watch(
 </script>
 
 <template>
-  <!-- TODO: 还有一个openKey需要绑定 -->
   <Menu
     v-model:selectedKeys="data.selectedKeys"
-    v-model:openKeys="data.openKey"
+    :openKeys="data.openKey"
     mode="inline"
     :inlineIndent="24"
     :theme="data.config.sideBarTheme"
     :inline-collapsed="data.config.toggle"
+    :multiple="false"
     :style="{ borderRight: 'none' }"
   >
     <menu-item-deep type="subMenu" v-for="i in item" :key="i.key" :list="i" />

@@ -7,7 +7,7 @@
 import { ref, onMounted, defineProps } from 'vue'
 import type { changeCanvasType } from '../../../types/waterMark'
 interface Props {
-  isGlobalShowWaterMark: boolean
+  isGlobalShowWaterMark?: boolean | undefined
 }
 const canvas = ref<HTMLCanvasElement | null>(null)
 const divTopElement = ref<HTMLDivElement | null>(null)

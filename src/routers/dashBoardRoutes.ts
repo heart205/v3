@@ -7,7 +7,7 @@ export default <RouterConfig[]>[
     redirect: '/dashBoard/index',
     component: () => import('../pages/dashboard/index.vue'),
     meta: {
-      title: 'dashBoard',
+      title: '控制台',
       icon: 'dashboard'
     },
     children: [
@@ -16,7 +16,7 @@ export default <RouterConfig[]>[
         name: 'DashBoardIndex',
         component: () => import('../pages/dashboard/index.vue'),
         meta: {
-          title: '控制台',
+          title: '导航面板',
           icon: 'test'
         }
       }

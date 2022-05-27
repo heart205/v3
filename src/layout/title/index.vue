@@ -7,6 +7,7 @@ import {
 import { useStore } from 'vuex'
 import type { storeImpl } from '../../types/store'
 import Config from './config.vue'
+import Breadcrumb from '../breadcrumb/index.vue'
 const store = useStore<storeImpl>()
 
 function handleChangeToggle() {
@@ -19,14 +20,23 @@ function handleChangeIsSystemCollapsedVisible(bool: boolean) {
 </script>
 <template>
   <div class="h-12 title-shadow flex-shrink-0">
-    <div class="h-icon" @click="handleChangeToggle">
-      <menu-unfold-outlined v-if="store.state.config.toggle" />
-      <menu-fold-outlined v-else />
+    <div class="flex items-center">
+      <!-- toggle start -->
+      <div class="h-icon" @click="handleChangeToggle">
+        <menu-unfold-outlined v-if="store.state.config.toggle" />
+        <menu-fold-outlined v-else />
+      </div>
+      <!-- toggle end -->
+      <!-- breadcrumb -->
+      <Breadcrumb />
     </div>
-    <div class="h-icon" @click="handleChangeIsSystemCollapsedVisible(true)">
-      <span class="">
-        <SettingOutlined />
-      </span>
+
+    <div>
+      <div class="h-icon" @click="handleChangeIsSystemCollapsedVisible(true)">
+        <span class="">
+          <SettingOutlined />
+        </span>
+      </div>
     </div>
     <Config
       :visible="store.state.config.isSystemCollapsed"

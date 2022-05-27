@@ -20,5 +20,8 @@ export default defineConfig({
     alias: {
       '@': resolve('src')
     }
+  },
+  server: {
+    hmr: true
   }
 })
