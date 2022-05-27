@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Loading from './layout/fallback/loading.vue'
+</script>
 
 <template>
   <router-view />
+  <Loading />
 </template>
 
 <style>

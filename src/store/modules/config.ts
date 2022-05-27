@@ -8,7 +8,8 @@ const state: systemConfig = {
   footerHeight: 0, // 页脚的高度
   tabsList: [],
   isShowTabsList: true,
-  contentPadding: 16
+  contentPadding: 16,
+  isLoading: false
 }
 
 const mutations = {
@@ -17,6 +18,10 @@ const mutations = {
   },
   CHANGE_IS_SYSTEM_COLLAPSED_VISIBLE(state: systemConfig, payload: boolean) {
     state.isSystemCollapsed = payload
+  },
+  CHANGE_LOADING_STATE(state: systemConfig, payload: boolean) {
+    state.isLoading = payload
+    console.log(state.isLoading)
   }
 }
 

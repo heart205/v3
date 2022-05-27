@@ -18,6 +18,7 @@ export interface systemConfig {
   tabsList: Tabs[]
   isShowTabsList: boolean
   contentPadding: number
+  isLoading: boolean
 }
 export interface storeImpl {
   // export function useStore<S = any>(injectKey?: InjectionKey<Store<S>> | string): Store<S>;
