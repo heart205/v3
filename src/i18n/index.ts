@@ -1,6 +1,7 @@
 import * as VueI18n from 'vue-i18n'
 import zhCN from './zh-CN'
 import enUS from './en-US'
+import type { App } from 'vue'
 
 const i18n = VueI18n.createI18n({
   locale: 'zh-CN',
@@ -17,3 +18,7 @@ export default i18n
  * template
  * {{ $t('hello') }}
  */
+
+export function setupI18n(app: App) {
+  app.use(i18n)
+}

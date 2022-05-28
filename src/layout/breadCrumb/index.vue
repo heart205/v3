@@ -18,7 +18,7 @@ watch(
 </script>
 
 <template>
-  <div class="text-color">
+  <div>
     <Breadcrumb :routes="routers">
       <template #itemRender="{ route, routes, paths }">
         <span v-if="routes.indexOf(route) === routes.length - 1">{{
@@ -33,15 +33,3 @@ watch(
     >
   </div>
 </template>
-
-<style lang="less" scoped>
-.text-color {
-  span,
-  a {
-    color: var(--text) !important;
-  }
-}
-:deep(.ant-breadcrumb-separator) {
-  color: var(--text);
-}
-</style>

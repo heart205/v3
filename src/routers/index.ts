@@ -8,6 +8,7 @@ import dashBoardRoutes from './dashBoardRoutes'
 import MarkdownRoutes from './markdownRoutes'
 import { editorRoutes } from './editorRoutes'
 import systemRoutes from './systemRoutes'
+import type { App } from 'vue'
 let routesArray: RouterConfig[] = []
 
 routesArray = routesArray.concat(
@@ -34,3 +35,7 @@ const router = VueRouter.createRouter({
 export default router
 
 export { routes }
+
+export function setupRouter(app: App) {
+  app.use(router)
+}

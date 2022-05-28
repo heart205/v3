@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 import config from './modules/config'
 import user from './modules/user'
 import type { storeImpl } from '../types/store'
+import type { App } from 'vue'
 
 const store = createStore<storeImpl>({
   modules: {
@@ -11,3 +12,7 @@ const store = createStore<storeImpl>({
 })
 
 export default store
+
+export function setupStore(app: App) {
+  app.use(store)
+}
