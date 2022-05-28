@@ -14,10 +14,25 @@ import { Calendar } from 'ant-design-vue'
 </template>
 
 <style lang="less" scoped>
-@border-color: #f0f0f0;
 .date {
-  background-color: #fff;
+  background-color: var(--background-color);
   overflow: hidden;
   padding: 12px;
+}
+:deep(.ant-picker-calendar) {
+  color: var(--text);
+  background-color: var(--background-color);
+}
+:deep(.ant-picker-calendar-full .ant-picker-panel) {
+  background-color: var(--background-color);
+}
+:deep(.ant-picker-cell-in-view) {
+  color: var(--text);
+}
+:deep(.ant-picker-content th) {
+  color: var(--text);
+}
+:deep(.ant-picker-cell) {
+  color: var(--text-2) !important;
 }
 </style>

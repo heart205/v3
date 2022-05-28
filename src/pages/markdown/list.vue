@@ -43,7 +43,7 @@ function onSearch(searchValue: string) {
 
 <template>
   <div class="h-full p-4">
-    <div class="w-full h-full bg-white">
+    <div class="w-full h-full bg-w">
       <Tabs v-model:activeKey="data.activeKey">
         <template #rightExtra>
           <Search
@@ -68,5 +68,8 @@ function onSearch(searchValue: string) {
 <style lang="less" scoped>
 :deep(.ant-tabs-nav) {
   padding: 0 20px;
+}
+.bg-w {
+  background: var(--background-color);
 }
 </style>

@@ -34,10 +34,10 @@ function toPath() {
   font-size: 12px;
   border-radius: 4px;
   color: @btn-color;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
 }
 .activeTabs {
-  color: var(--color);
+  color: #fff !important;
   background-color: var(--btn-color);
 }
 </style>

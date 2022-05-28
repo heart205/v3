@@ -27,7 +27,7 @@ useGeolocation().then(({ coords }) => {
 </script>
 
 <template>
-  <div class="page-header">
+  <div class="page-header text-color">
     <div class="flex">
       <!-- 头像 -->
       <span class="avatar">
@@ -69,7 +69,7 @@ useGeolocation().then(({ coords }) => {
   padding: 16px 24px;
   box-sizing: border-box;
   background-color: var(--background-color);
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
   & > div {
     height: 100%;
     align-items: center;
@@ -121,7 +121,7 @@ useGeolocation().then(({ coords }) => {
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        border-left: 1px solid #eee;
+        border-left: 1px solid var(--border-color);
       }
     }
     & > span {
@@ -133,6 +133,14 @@ useGeolocation().then(({ coords }) => {
         font-size: 22px;
       }
     }
+  }
+}
+.text-color {
+  h2,
+  span,
+  a,
+  p {
+    color: var(--text);
   }
 }
 </style>

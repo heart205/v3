@@ -159,7 +159,7 @@ function handleResetValue(callback?: (...args: unknown[]) => void) {
 </script>
 
 <template>
-  <div class="bg-white p-6">
+  <div class="bg-w p-6">
     <a-form :="wrapper" layout="inline" class="w-full">
       <FormItem label="字典名称">
         <AInput placeholder="请输入字典名称" style="width: 14rem" />
@@ -291,7 +291,7 @@ function handleResetValue(callback?: (...args: unknown[]) => void) {
     }
   }
 }
+.bg-w {
+  background: var(--background-color);
+}
 </style>
-
-function usePageSizeChange(): [any, any] { throw new Error('Function not
-implemented.') }

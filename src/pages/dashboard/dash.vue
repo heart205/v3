@@ -50,10 +50,9 @@ const data = reactive([
 </template>
 
 <style lang="less" scoped>
-@box-color: #f0f0f0;
 .dash-ul {
   flex-wrap: wrap;
-  background-color: #fff;
+  background-color: var(--background-color);
 }
 .dash-li {
   width: 33.3%;
@@ -64,14 +63,15 @@ const data = reactive([
   justify-content: center;
   align-items: center;
   &:nth-child(3n - 1) {
-    box-shadow: -1px 0 @box-color, 1px 0 @box-color, 0 -1px @box-color;
+    box-shadow: -1px 0 var(--box-color), 1px 0 var(--box-color),
+      0 -1px var(--box-color);
   }
   &:nth-child(3n-2) {
-    box-shadow: -1px -1px @box-color, 0 -1px @box-color;
+    box-shadow: -1px -1px var(--box-color), 0 -1px var(--box-color);
   }
 
   &:nth-child(3n) {
-    box-shadow: 1px 0px @box-color, 1px -1px @box-color;
+    box-shadow: 1px 0px var(--box-color), 1px -1px var(--box-color);
   }
 }
 </style>

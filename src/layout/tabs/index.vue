@@ -20,11 +20,18 @@ watch(
 </script>
 
 <template>
-  <div class="flex items-center">
+  <div class="flex items-center text-color">
     <template v-for="item in tabsList.list" :key="item.path">
       <TabsBtn :path="item.path" :name="item.name" />
     </template>
   </div>
 </template>
 
-<style></style>
+<style lang="less" scoped>
+.text-color {
+  span,
+  a {
+    color: var(--text);
+  }
+}
+</style>

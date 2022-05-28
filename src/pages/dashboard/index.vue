@@ -19,7 +19,7 @@ import TimeLine from './timeLine.vue'
           <div class="aside-img">
             <img src="../../assets/images/asider-img.png" alt="" />
           </div>
-          <div class="record flex-1 bg-white">
+          <div class="record flex-1 bg-w">
             <!-- 数据埋点展示 -->
             <Card title="最新动态">
               <div class="new-dynamics">
@@ -65,5 +65,8 @@ import TimeLine from './timeLine.vue'
 }
 .new-dynamics {
   padding: 12px;
+}
+.bg-w {
+  background: var(--background-color);
 }
 </style>

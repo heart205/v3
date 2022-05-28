@@ -29,7 +29,7 @@ function getData(data: pageNationRequest) {
   <div class="h-full overflow-auto flex flex-col">
     <div class="overflow-auto">
       <template v-for="item in articleList.list" :key="item.id">
-        <div class="article-warp bg-white">
+        <div class="article-warp bg-w">
           <h2>
             <router-link
               :to="{
@@ -94,5 +94,8 @@ function getData(data: pageNationRequest) {
       }
     }
   }
+}
+.bg-w {
+  background: var(--background-color);
 }
 </style>
