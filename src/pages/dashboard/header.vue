@@ -64,13 +64,12 @@ useGeolocation().then(({ coords }) => {
 
 <style lang="less" scoped>
 @color: #6a6c6e;
-@bg-color: #fff;
 @matter-color: #757575;
 .page-header {
   height: 120px;
   padding: 16px 24px;
   box-sizing: border-box;
-  background-color: @bg-color;
+  background-color: var(--background-color);
   border: 1px solid #eee;
   & > div {
     height: 100%;

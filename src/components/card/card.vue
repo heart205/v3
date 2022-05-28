@@ -17,12 +17,11 @@ const props = defineProps<Props>()
 </template>
 
 <style lang="less" scoped>
-@bg-color: #fff;
 @color: rgb(86 82 82 / 85%);
 @border-color: #f0f0f0;
 .h-card {
   min-height: 48px;
-  background-color: @bg-color;
+  background-color: var(--background-color);
 }
 .h-card-title {
   min-height: inherit;

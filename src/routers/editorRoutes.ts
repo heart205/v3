@@ -5,7 +5,7 @@ export const editorRoutes: RouterConfig[] = [
     path: '/editor',
     name: 'editor',
     meta: {
-      title: 'editor'
+      title: '富文本编辑器'
     },
     redirect: '/editor/index',
     component: () => import('../pages/editor/index.vue'),

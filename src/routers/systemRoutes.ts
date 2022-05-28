@@ -6,7 +6,7 @@ export default <RouterConfig[]>[
     redirect: '/systemManager/dict',
     component: () => import('../pages/system/index.vue'),
     meta: {
-      title: 'systemManager',
+      title: '系统管理',
       icon: 'icon-setting'
     },
     children: [

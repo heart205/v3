@@ -2,8 +2,7 @@ import type { config } from '../store/modules/config'
 import type store from '../store/index'
 import type { Store } from 'vuex'
 import type { User } from './store/user'
-type sideBarTheme = 'light' | 'dark'
-
+import type { ThemeColor } from '../constant/enum'
 export interface Tabs {
   name: string
   path: string | number
@@ -11,7 +10,6 @@ export interface Tabs {
 export interface systemConfig {
   pageNotFoundIsContainContent: boolean
   sideBarDeepNumber: number
-  sideBarTheme: sideBarTheme
   toggle: boolean
   isSystemCollapsed: boolean
   footerHeight: number
@@ -19,6 +17,7 @@ export interface systemConfig {
   isShowTabsList: boolean
   contentPadding: number
   isLoading: boolean
+  themeColor: ThemeColor
 }
 export interface storeImpl {
   // export function useStore<S = any>(injectKey?: InjectionKey<Store<S>> | string): Store<S>;

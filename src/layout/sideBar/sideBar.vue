@@ -52,7 +52,7 @@ watch(
     :openKeys="data.openKey"
     mode="inline"
     :inlineIndent="24"
-    :theme="data.config.sideBarTheme"
+    :theme="data.config.themeColor"
     :inline-collapsed="data.config.toggle"
     :multiple="false"
     :style="{ borderRight: 'none' }"

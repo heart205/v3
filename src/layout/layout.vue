@@ -34,7 +34,7 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .content {
-  background-color: var(--bg-color);
+  background-color: var(--background-content-color);
   overflow: auto;
 }
 </style>

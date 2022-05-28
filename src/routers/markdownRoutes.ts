@@ -6,7 +6,7 @@ export default <RouterConfig[]>[
     redirect: '/markdown/list',
     component: () => import('../pages/markdown/layout.vue'),
     meta: {
-      title: 'markdown',
+      title: '文章列表',
       icon: 'markdown'
     },
     children: [

@@ -55,7 +55,7 @@ import TimeLine from './timeLine.vue'
   .aside-img {
     height: 240px;
     margin: 14px 0;
-    background-color: @bg-color;
+    background-color: var(--background-color);
     img {
       height: 100%;
       margin: auto;
