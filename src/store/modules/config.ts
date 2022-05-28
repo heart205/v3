@@ -23,6 +23,16 @@ const mutations = {
   CHANGE_LOADING_STATE(state: systemConfig, payload: boolean) {
     state.isLoading = payload
     console.log(state.isLoading)
+  },
+  CHANGE_THEME_COLOR(state: systemConfig, payload: ThemeColor) {
+    state.themeColor = payload
+    if (state.themeColor === ThemeColor.DARK) {
+      document.body.classList.add('dark')
+      document.body.classList.remove('light')
+    } else {
+      document.body.classList.add('light')
+      document.body.classList.remove('dark')
+    }
   }
 }
 

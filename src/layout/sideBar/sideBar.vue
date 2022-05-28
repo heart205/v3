@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import { Menu } from 'ant-design-vue'
-import { shallowReactive, watch } from 'vue'
+import { ref, shallowReactive, watch } from 'vue'
 import { useMenuItem } from './hooks/useItemList'
 import type { ItemConfig } from '../../types/sideBar'
 import MenuItemDeep from './menuItem.vue'
 import { useStore } from 'vuex'
-import type { storeImpl } from '../../types/store'
-import type { systemConfig } from '../../types/store'
+import type { storeImpl, systemConfig } from '../../types/store'
 import { useRoute } from 'vue-router'
 import { useAddTabs } from '../../hooks/useAddTabs'
 import { useStoreConfig } from '../../store/hooks/useStoreConfig'
 import { useOpenKey } from './hooks/useOpenKey'
+import type { ThemeColor } from '../../constant/enum'
 const item = useMenuItem()
 
 const store = useStore<storeImpl>()
@@ -28,7 +28,8 @@ const data = shallowReactive<{
 })
 const route = useRoute()
 const configStore = useStoreConfig()
-
+const theme = ref<ThemeColor>()
+theme.value = configStore.themeColor
 watch(
   () => route.meta.title as string,
   (newVal) => {
@@ -44,6 +45,15 @@ watch(
   },
   { immediate: true }
 )
+console.log(configStore)
+watch(
+  () => configStore.themeColor,
+  (val) => {
+    console.log(val)
+    theme.value = val
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
@@ -52,7 +62,7 @@ watch(
     :openKeys="data.openKey"
     mode="inline"
     :inlineIndent="24"
-    :theme="data.config.themeColor"
+    :theme="theme"
     :inline-collapsed="data.config.toggle"
     :multiple="false"
     :style="{ borderRight: 'none' }"

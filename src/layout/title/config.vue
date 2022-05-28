@@ -1,9 +1,11 @@
 <script setup lang="ts">
 // 项目配置
-import { ref, defineProps, defineEmits, onMounted, watch } from 'vue'
+import { ref, defineProps, defineEmits } from 'vue'
 import type { DrawerProps } from 'ant-design-vue'
 import { Drawer, Divider } from 'ant-design-vue'
 import { projectConfig } from '../../config/index'
+import { useStore } from 'vuex'
+import { useStoreConfig } from '../../store/hooks/useStoreConfig'
 import { ThemeColor } from '../../constant/enum'
 interface Props {
   visible: boolean
@@ -12,16 +14,11 @@ interface emits {
   (event: 'update', arg1: boolean): boolean
 }
 const props = defineProps<Props>()
-
+const config = useStoreConfig()
 const emit = defineEmits<emits>()
 const placement = ref<DrawerProps['placement']>('right')
-
-const toggleStatus = ref<ThemeColor>(ThemeColor.DARK)
-onMounted(() => {
-  const theme = localStorage.getItem('themeColor')
-  toggleStatus.value =
-    theme === ThemeColor.DARK ? ThemeColor.DARK : ThemeColor.LIGHT
-})
+const store = useStore()
+const toggleStatus = ref<ThemeColor>(config.themeColor)
 
 function onClose() {
   emit('update', false)
@@ -31,17 +28,8 @@ function handleToggleStatusChange() {
     toggleStatus.value === ThemeColor.LIGHT ? ThemeColor.DARK : ThemeColor.LIGHT
   localStorage.setItem('themeColor', status)
   toggleStatus.value = status
+  store.commit('config/CHANGE_THEME_COLOR', toggleStatus.value)
 }
-
-watch(toggleStatus, (val) => {
-  if (val === ThemeColor.DARK) {
-    document.body.classList.add('dark')
-    document.body.classList.remove('light')
-  } else {
-    document.body.classList.add('light')
-    document.body.classList.remove('dark')
-  }
-})
 </script>
 
 <template>
