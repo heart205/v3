@@ -58,12 +58,11 @@ function getData(data: pageNationRequest) {
 </template>
 
 <style lang="less" scoped>
-@color: rgba(0, 0, 0, 0.54);
 @titleColor: #1d2129;
 @borderColor: #eee;
 @hoverColor: #1890ff;
 .footer {
-  color: @color;
+  color: var(--text);
   & > span:nth-child(1) {
     padding: 0 12px;
     border-right: 1px solid @borderColor;

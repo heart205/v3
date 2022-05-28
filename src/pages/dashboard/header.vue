@@ -63,7 +63,6 @@ useGeolocation().then(({ coords }) => {
 </template>
 
 <style lang="less" scoped>
-@color: #6a6c6e;
 @matter-color: #757575;
 .page-header {
   height: 120px;
@@ -83,7 +82,7 @@ useGeolocation().then(({ coords }) => {
           font-size: 18px;
         }
         p {
-          color: @color;
+          color: var(--text);
         }
       }
       &:nth-of-type(2) {

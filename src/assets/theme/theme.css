@@ -1,4 +1,5 @@
 :root {
+  --text: #757575;
   --color: rgb(255 255 255);
   --btn-primary-color: rgb(47 200 149 / 80%);
   --btn-primary-hover-color: rgb(47 200 149 / 100%);
@@ -7,12 +8,20 @@
   --toggle-bgc-hover: rgb(250 250 250);
   --background-content-color: rgb(236 239 242);
   --background-color: rgb(255 255 255);
+  --sidebar-border-color: #fff;
+  --border-color: #f0f0f0;
   --btn-color: rgb(42, 94, 183);
 }
 
 :root .dark {
-  --background-color: rgb(30, 30, 30);
+  --text: #e2e8ee;
+  --background-color: rgb(4, 21, 39);
+  --sidebar-border-color: rgb(30, 30, 30);
   --background-content-color: rgb(30, 30, 30);
+  --border-color: rgb(30, 30, 30);
+}
+.dark {
+  color-scheme: dark;
 }
 
 .btn {
@@ -27,5 +36,5 @@
 }
 
 .border-right-lg {
-  border-right: 1px solid rgb(249 249 249);
+  border-right: 1px solid var(--sidebar-border-color);
 }

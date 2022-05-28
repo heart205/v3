@@ -14,7 +14,6 @@ import { Calendar } from 'ant-design-vue'
 </template>
 
 <style lang="less" scoped>
-@color: rgba(0, 0, 0, 0.85);
 @border-color: #f0f0f0;
 .date {
   background-color: #fff;

@@ -11,7 +11,6 @@ const routes = useRoute()
 watch(
   () => routes.matched,
   (newVal) => {
-    console.log(newVal)
     routers.value = useRouterToBreadCrumb(newVal)
   },
   { immediate: true }
@@ -19,18 +18,30 @@ watch(
 </script>
 
 <template>
-  <Breadcrumb :routes="routers">
-    <template #itemRender="{ route, routes, paths }">
-      <span v-if="routes.indexOf(route) === routes.length - 1">{{
-        route.breadcrumbName
-      }}</span>
-      <router-link
-        v-else
-        :to="paths.length === 0 ? '/' : paths[paths.length - 1]"
-        >{{ route.breadcrumbName }}</router-link
-      >
-    </template></Breadcrumb
-  >
+  <div class="text-color">
+    <Breadcrumb :routes="routers">
+      <template #itemRender="{ route, routes, paths }">
+        <span v-if="routes.indexOf(route) === routes.length - 1">{{
+          route.breadcrumbName
+        }}</span>
+        <router-link
+          v-else
+          :to="paths.length === 0 ? '/' : paths[paths.length - 1]"
+          >{{ route.breadcrumbName }}</router-link
+        >
+      </template></Breadcrumb
+    >
+  </div>
 </template>
 
-<style></style>
+<style lang="less" scoped>
+.text-color {
+  span,
+  a {
+    color: var(--text) !important;
+  }
+}
+:deep(.ant-breadcrumb-separator) {
+  color: var(--text);
+}
+</style>

@@ -18,13 +18,12 @@ import { Timeline, TimelineItem } from 'ant-design-vue'
 </template>
 
 <style lang="less" scoped>
-@color: rgb(86 82 82 / 85%);
 .time-line {
   p {
     margin-bottom: 0;
   }
   span {
-    color: @color;
+    color: var(--text);
   }
 }
 </style>

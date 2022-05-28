@@ -34,7 +34,7 @@ import TimeLine from './timeLine.vue'
 </template>
 
 <style lang="less" scoped>
-@import url('../../assets/theme/layout.less');
+@import url('../../assets/less/layout.less');
 .dash-board {
   padding: 8px;
 }

@@ -41,10 +41,19 @@ const sideBarHeight = computed(() => {
 </script>
 
 <template>
-  <div class="w-48 width-transition flex-shrink-0" :style="style.config">
+  <div
+    class="w-48 width-transition flex-shrink-0 sidebar"
+    :style="style.config"
+  >
     <Logo ref="logoRef" />
     <div :style="{ height: sideBarHeight }" class="border-right-lg">
       <SideBar />
     </div>
   </div>
 </template>
+
+<style lang="less" scoped>
+.sidebar {
+  background-color: var(--background-color);
+}
+</style>

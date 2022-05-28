@@ -48,14 +48,13 @@ function handleClick(item: FilterList, index: number) {
 </template>
 
 <style lang="less" scoped>
-@color: rgb(0 0 0 / 54%);
 @borderColor: rgb(238, 238, 238);
 @hoverColor: #1890ff;
 @clickColor: #1890ff;
 .filter {
   padding: 0 8px;
   & > span {
-    color: @color;
+    color: var(--text);
     padding: 0 12px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);

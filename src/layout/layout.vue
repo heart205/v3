@@ -19,7 +19,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div class="flex h-full w-full">
+  <div class="flex h-full w-full bgc">
     <SideBar />
     <div class="flex flex-col flex-1">
       <Title />
@@ -36,5 +36,9 @@ onMounted(() => {
 .content {
   background-color: var(--background-content-color);
   overflow: auto;
+}
+.bgc {
+  background-color: var(--background-color);
+  color: var(--text);
 }
 </style>
