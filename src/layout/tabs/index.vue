@@ -26,12 +26,3 @@ watch(
     </template>
   </div>
 </template>
-
-<style lang="less" scoped>
-.text-color {
-  span,
-  a {
-    color: var(--text);
-  }
-}
-</style>

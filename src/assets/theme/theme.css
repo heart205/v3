@@ -1,7 +1,7 @@
-:root {
+:root.theme-default {
   --text: #757575;
   --text-2: rgba(0, 0, 0, 0.25);
-  --color: rgb(255 255 255);
+  /* --color: rgb(255 255 255); */
   --btn-primary-color: rgb(47 200 149 / 80%);
   --btn-primary-hover-color: rgb(47 200 149 / 100%);
   --logo-bgc-color: rgb(196 252 239 / 20%);
@@ -13,18 +13,22 @@
   --border-color: #f0f0f0;
   --btn-color: rgb(42, 94, 183);
   --box-color: #f0f0f0;
+  --theme-bgc: #fff;
+  --theme-color: rgba(0, 0, 0, 0.85);
 }
 
-:root .dark {
+:root.theme-dark {
   --text: #e2e8ee;
   --text-2: rgba(209, 215, 222, 0.85);
-  --background-color: rgb(4, 21, 39);
+  --background-color: rgb(0, 0, 0);
   --sidebar-border-color: rgb(30, 30, 30);
   --background-content-color: rgb(30, 30, 30);
   --border-color: #3e4c5a;
   --box-color: #3e4c5a;
+  --theme-bgc: rgba(0, 0, 0, 0.85);
+  --theme-color: #fff;
 }
-.dark {
+.theme-dark {
   color-scheme: dark;
 }
 

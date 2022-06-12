@@ -41,4 +41,8 @@ onMounted(() => {
   background-color: var(--background-color);
   color: var(--text);
 }
+
+html[class='theme-dark'] .bgc {
+  background-color: var(--theme-bgc);
+}
 </style>

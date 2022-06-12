@@ -11,13 +11,13 @@ export const canvasRoutes: RouterConfig[] = [
     path: '/canvas',
     name: 'canvasModules',
     redirect: '/canvas/customCanvas',
-    component: () => import('@/pages/canvas/index.vue'),
     meta: {
       hidden: false,
       title: 'canvas案例',
       sideBarType: 'subMenu',
       icon: 'folder'
     },
+    component: () => import('@/pages/canvas/index.vue'),
     children: [
       {
         path: 'customCanvas',

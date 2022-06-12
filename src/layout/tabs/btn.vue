@@ -26,14 +26,12 @@ function toPath() {
 </template>
 
 <style lang="less" scoped>
-@btn-color: rgba(0, 0, 0, 0.85);
 .tabs {
   display: inline-block;
   padding: 3px 12px;
   margin: 3px 6px;
   font-size: 12px;
   border-radius: 4px;
-  color: @btn-color;
   border: 1px solid var(--border-color);
 }
 .activeTabs {

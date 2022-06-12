@@ -8,12 +8,14 @@ import dashBoardRoutes from './dashBoardRoutes'
 import MarkdownRoutes from './markdownRoutes'
 import { editorRoutes } from './editorRoutes'
 import systemRoutes from './systemRoutes'
+import componentsRoutes from './componentsRoutes'
 import type { App } from 'vue'
 let routesArray: RouterConfig[] = []
 
 routesArray = routesArray.concat(
   dashBoardRoutes,
   canvasRoutes,
+  componentsRoutes,
   MarkdownRoutes,
   editorRoutes,
   systemRoutes

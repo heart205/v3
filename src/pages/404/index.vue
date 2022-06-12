@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from '../../components/button/button.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 function goBack() {
@@ -15,6 +16,7 @@ function goBack() {
         <p class="font-24">page not found</p>
         <div>
           <button class="goBack btn" @click="goBack">go back</button>
+          <Button>default</Button>
         </div>
       </div>
     </div>

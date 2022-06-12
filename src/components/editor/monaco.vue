@@ -5,6 +5,7 @@ import { onMounted, ref } from 'vue'
 // Unexpected usage:
 // @see:https://www.npmjs.com/package/vite-plugin-monaco-editor
 const editor = ref<HTMLDivElement>(null!)
+
 const data = ref<string>()
 onMounted(() => {
   monaco.editor.create(editor.value, {

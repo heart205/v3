@@ -19,7 +19,7 @@ function handleChangeIsSystemCollapsedVisible(bool: boolean) {
 }
 </script>
 <template>
-  <div class="h-12 title-shadow flex-shrink-0">
+  <div class="h-12 title-shadow flex-shrink-0 title-wrapper">
     <div class="flex items-center">
       <!-- toggle start -->
       <div class="h-icon" @click="handleChangeToggle">
@@ -51,19 +51,29 @@ function handleChangeIsSystemCollapsedVisible(bool: boolean) {
   display: flex;
   justify-content: space-between;
 }
+
 .h-icon {
   padding: 12px 12px;
   cursor: pointer;
   transition: all 0.45s cubic-bezier(0.215, 0.61, 0.355, 1);
+
   span {
     font-size: 20px;
     line-height: 0;
   }
+
   &:hover {
     background: var(--toggle-bgc-hover);
+
     span {
       color: var(--toggle-btn);
     }
+  }
+}
+
+html.theme-dark {
+  .title-wrapper {
+    background: var(--theme-bgc);
   }
 }
 </style>

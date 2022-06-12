@@ -18,7 +18,7 @@ watch(
 </script>
 
 <template>
-  <div>
+  <div class="breadcrumb-wrapper">
     <Breadcrumb :routes="routers">
       <template #itemRender="{ route, routes, paths }">
         <span v-if="routes.indexOf(route) === routes.length - 1">{{
@@ -27,9 +27,9 @@ watch(
         <router-link
           v-else
           :to="paths.length === 0 ? '/' : paths[paths.length - 1]"
-          >{{ route.breadcrumbName }}</router-link
-        >
-      </template></Breadcrumb
-    >
+          >{{ route.breadcrumbName }}
+        </router-link>
+      </template>
+    </Breadcrumb>
   </div>
 </template>
