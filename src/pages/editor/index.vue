@@ -7,5 +7,3 @@ import Editor from '../../components/editor/monaco.vue'
     <Editor />
   </div>
 </template>
-
-<style></style>

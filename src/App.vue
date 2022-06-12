@@ -19,6 +19,12 @@ watch(
     immediate: true
   }
 )
+
+ConfigProvider.config({
+  theme: {
+    primaryColor: 'red'
+  }
+})
 // 监听事件
 </script>
 

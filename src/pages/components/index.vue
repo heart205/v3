@@ -4,7 +4,7 @@ import Switch from '../../components/switch/index.vue'
 
 <template>
   <div class="p-4 h-full">
-    <div class="bg-white h-full p-2">
+    <div class="h-full p-2">
       <Switch />
     </div>
   </div>

@@ -131,13 +131,14 @@ if (params.type === 'edit') {
 :deep(.md) {
   height: calc(100% - 44px);
   border: none;
+  background-color: var(--theme-bgc);
 }
 :deep(#md-editor-v3-textarea::-webkit-scrollbar) {
   width: 1px;
 }
 .markdown-title {
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--theme-bgc);
   height: 44px;
   display: flex;
   align-items: center;

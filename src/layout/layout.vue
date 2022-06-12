@@ -34,9 +34,10 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .content {
-  background-color: var(--background-content-color);
+  background-color: var(--theme-bgc);
   overflow: auto;
 }
+
 .bgc {
   background-color: var(--background-color);
   color: var(--text);
