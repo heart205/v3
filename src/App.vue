@@ -14,17 +14,24 @@ watch(
     } else {
       prefixCls.value = 'custom-default'
     }
+    for (let i = 0; i < 5; i++) {
+      changeThemeColor()
+    }
   },
   {
     immediate: true
   }
 )
-
-ConfigProvider.config({
-  theme: {
-    primaryColor: 'red'
-  }
-})
+function changeThemeColor() {
+  setTimeout(() => {
+    ConfigProvider.config({
+      prefixCls: prefixCls.value,
+      theme: {
+        primaryColor: '#25b864'
+      }
+    })
+  }, 1500)
+}
 // 监听事件
 </script>
 
