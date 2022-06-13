@@ -9,8 +9,10 @@ import { setupRouter } from './routers'
 import { setupStore } from './store'
 import { setupI18n } from './i18n/index'
 import setupInitConfig from './prod'
-import './custom-default.css'
-import './custom-dark.css'
+// import './custom-default.css'
+// import './custom-dark.css'
+// 提取css 之后 将变量存在的地方替换成变量
+// https://github.com/gzgogo/antd-theme
 import './modified.css'
 import './modified-default.css'
 // createApp 允许链式调用
