@@ -32,7 +32,6 @@ function changeThemeColor() {
     })
   }, 1500)
 }
-// 监听事件
 </script>
 
 <template>

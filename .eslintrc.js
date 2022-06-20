@@ -24,6 +24,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 0, // setup is error
     '@typescript-eslint/no-explicit-any': 0,
     'prettier/prettier': 'error', // 被prettier标记的地方抛出错误
-    '@typescript-eslint/no-non-null-assertion': 0
+    '@typescript-eslint/no-non-null-assertion': 0,
+    '@typescript-eslint/no-var-requires': 0
   }
 }
