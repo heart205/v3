@@ -5,8 +5,6 @@
  */
 import * as fs from 'fs'
 
-console.log('生成主题')
-
 // 提取css选择器
 const cssSelectorReg = /\}[^}]+\{/g
 // 提取css值
