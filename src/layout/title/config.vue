@@ -3,7 +3,7 @@
 import { ref, defineProps, defineEmits } from 'vue'
 import type { DrawerProps } from 'ant-design-vue'
 import { Drawer, Divider } from 'ant-design-vue'
-import { projectConfig } from '../../config/index'
+import { projectConfig, systemColorArrays } from '../../config/index'
 import { useStore } from 'vuex'
 import { useStoreConfig } from '../../store/hooks/useStoreConfig'
 import { ThemeColor } from '../../constant/enum'
@@ -23,12 +23,17 @@ const toggleStatus = ref<ThemeColor>(config.themeColor)
 function onClose() {
   emit('update', false)
 }
+
 function handleToggleStatusChange() {
   const status =
     toggleStatus.value === ThemeColor.LIGHT ? ThemeColor.DARK : ThemeColor.LIGHT
   localStorage.setItem('themeColor', status)
   toggleStatus.value = status
   store.commit('config/CHANGE_THEME_COLOR', toggleStatus.value)
+}
+
+function handleChangeSystemColor(color: string) {
+  config.systemColor = color
 }
 </script>
 
@@ -56,6 +61,18 @@ function handleToggleStatusChange() {
         ></div>
       </div>
     </div>
+    <Divider>系统主题</Divider>
+    <div class="system-color">
+      <template v-for="item in systemColorArrays" :key="item">
+        <div
+          @click="handleChangeSystemColor(item)"
+          class="system-color-item"
+          :style="{ backgroundColor: item }"
+        ></div>
+      </template>
+    </div>
+
+    <!-- <input type="color" value="#77bbff"> -->
   </Drawer>
 </template>
 
@@ -95,5 +112,18 @@ function handleToggleStatusChange() {
 }
 .theme-light {
   right: 7px;
+}
+
+.system-color {
+  //
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .system-color-item {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+    cursor: pointer;
+  }
 }
 </style>

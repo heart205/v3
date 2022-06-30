@@ -14,23 +14,35 @@ watch(
     } else {
       prefixCls.value = 'custom-default'
     }
-    for (let i = 0; i < 5; i++) {
-      changeThemeColor()
-    }
+    cycleChangeColor()
   },
   {
     immediate: true
   }
 )
+
+watch(
+  () => config.systemColor,
+  () => {
+    cycleChangeColor()
+  }
+)
+
+function cycleChangeColor(count = 2) {
+  for (let i = 0; i < count; i++) {
+    changeThemeColor()
+  }
+}
+
 function changeThemeColor() {
   setTimeout(() => {
     ConfigProvider.config({
       prefixCls: prefixCls.value,
       theme: {
-        primaryColor: '#25b864'
+        primaryColor: config.systemColor
       }
     })
-  }, 1500)
+  }, 1000)
 }
 </script>
 

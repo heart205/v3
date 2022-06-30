@@ -73,5 +73,9 @@ const data = reactive([
   &:nth-child(3n) {
     box-shadow: 1px 0px var(--box-color), 1px -1px var(--box-color);
   }
+
+  &:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--box-color);
+  }
 }
 </style>

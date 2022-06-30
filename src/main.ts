@@ -9,9 +9,9 @@ import { setupRouter } from './routers'
 import { setupStore } from './store'
 import { setupI18n } from './i18n/index'
 import setupInitConfig from './prod'
-import './custom-default.css'
-import './custom-dark.css'
-import './variable.css'
+import './assets/theme/custom-default.css'
+import './assets/theme/custom-dark.css'
+import './assets/theme/variable.css'
 // createApp 允许链式调用
 // mount 不返回应用本身。相反，它返回的是根组件实例
 console.log(import.meta.env)

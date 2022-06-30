@@ -10,7 +10,8 @@ const state: systemConfig = {
   isShowTabsList: true,
   contentPadding: 16,
   isLoading: false,
-  themeColor: ThemeColor.LIGHT
+  themeColor: ThemeColor.LIGHT,
+  systemColor: '#25b864'
 }
 
 const mutations = {

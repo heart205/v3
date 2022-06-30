@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
-import { defineProps } from 'vue'
+import type { CSSProperties } from 'vue'
+import { computed, defineProps, reactive, watch } from 'vue'
+import { useStoreConfig } from '@/store/hooks/useStoreConfig'
+import { ThemeColor } from '@/constant/enum'
 interface Props {
   path: string | number
   name: string
@@ -8,6 +11,33 @@ interface Props {
 const props = defineProps<Props>()
 const route = useRoute()
 const router = useRouter()
+
+const config = useStoreConfig()
+
+const prefixCls = computed(() => {
+  return config.themeColor === ThemeColor.DARK
+    ? '--custom-dark'
+    : '--custom-default'
+})
+
+type prefixClsType = '--custom-dark' | '--custom-default'
+
+const hoverColorSuffixCls = '-primary-color-hover'
+
+const style = reactive<
+  {
+    '--bgc-color': `var(${prefixClsType}${string})`
+  } & CSSProperties
+>({
+  '--bgc-color': `var(${prefixCls.value}${hoverColorSuffixCls})`
+})
+
+watch(
+  () => prefixCls.value,
+  (newVal) => {
+    style['--bgc-color'] = `var(${newVal}${hoverColorSuffixCls})`
+  }
+)
 
 function toPath() {
   const path = String(props.path)
@@ -20,7 +50,12 @@ function toPath() {
 </script>
 
 <template>
-  <a :class="{ tabs: true, activeTabs: path === route.path }" @click="toPath">
+  <a
+    :prefixCls="prefixCls"
+    :class="{ tabs: true, activeTabs: path === route.path }"
+    :style="style"
+    @click="toPath"
+  >
     {{ props.name }}
   </a>
 </template>
@@ -34,8 +69,9 @@ function toPath() {
   border-radius: 4px;
   border: 1px solid var(--border-color);
 }
+
 .activeTabs {
   color: #fff !important;
-  background-color: var(--btn-color);
+  background-color: var(--bgc-color);
 }
 </style>

@@ -123,7 +123,7 @@ html {
 }
 .custom-dark-btn:hover,
 .custom-dark-btn:focus {
-  color: var(--custom-dark-primary-color-hover);
+  /* color: var(--custom-dark-primary-color-hover); */
   border-color: var(--custom-dark-primary-color-hover);
 }
 .custom-dark-btn:active {

@@ -18,6 +18,7 @@ export interface systemConfig {
   contentPadding: number
   isLoading: boolean
   themeColor: ThemeColor
+  systemColor: string
 }
 export interface storeImpl {
   // export function useStore<S = any>(injectKey?: InjectionKey<Store<S>> | string): Store<S>;
