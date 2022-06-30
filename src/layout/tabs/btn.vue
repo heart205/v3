@@ -24,18 +24,24 @@ type prefixClsType = '--custom-dark' | '--custom-default'
 
 const hoverColorSuffixCls = '-primary-color-hover'
 
+const colorSuffixCls = '-primary-color'
+
 const style = reactive<
   {
     '--bgc-color': `var(${prefixClsType}${string})`
+    '--color': `var(${prefixClsType}${string})`
   } & CSSProperties
 >({
-  '--bgc-color': `var(${prefixCls.value}${hoverColorSuffixCls})`
+  '--bgc-color': `var(${prefixCls.value}${hoverColorSuffixCls})`,
+  '--color': `var(${prefixCls.value}${colorSuffixCls})`
 })
 
+// 或者用computed缓存
 watch(
   () => prefixCls.value,
   (newVal) => {
     style['--bgc-color'] = `var(${newVal}${hoverColorSuffixCls})`
+    style['--color'] = `var(${newVal}${colorSuffixCls})`
   }
 )
 
@@ -67,6 +73,7 @@ function toPath() {
   margin: 3px 6px;
   font-size: 12px;
   border-radius: 4px;
+  color: var(--color);
   border: 1px solid var(--border-color);
 }
 
